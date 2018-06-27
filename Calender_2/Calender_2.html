@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Calculator</title>
+    <style type="text/css">
+      .button{
+        width:60px;
+        height:50px;
+        border-width: 5px;
+        border-radius: 10px;
+        border-color: #51E346;
+        font-size: 20px;
+      }
+      .display{
+        position: relative;
+        border-radius: 10px;
+        top:2px;
+        height: 80px;
+        width: 350px;
+        color:white;
+        background-color: #3B3A3E;
+        font-size: 35px;
+        text-align: center;
+      }
+      .calcul{
+        background-color: #9C8DCA;
+        width:360px;
+        border-radius: 10px;
+      }
+      #display{
+        font-family :serif;
+        font-size: 15px;
+        height: 35px;
+      }
+    </style>
+
+    <script>
+      var calculMethod=""; //수식 변수
+      var boolOperNum = false; //마지막 행동 확인용
+
+      function clearNumDisplay(val){
+        document.getElementById("display").value=val;
+        calculMethod = val;
+        boolOperNum = false;
+      }
+
+      function addNumDisplay(val){ //숫자를 더하는 경우
+        if(boolOperNum){
+          document.getElementById("display").value = "";
+        }
+        document.getElementById("display").value += val;
+        calculMethod += val;
+        boolOperNum = false;
+      }
+
+      function operNum(val){
+        if(boolOperNum){ //수식을 바꿀경우
+            calculMethod = calculMethod.substr(0,calculMethod.length-1);
+        }
+
+        calculMethod = eval(calculMethod);
+        document.getElementById("display").value = calculMethod;
+
+        if(val != '='){
+            calculMethod += val;
+            boolOperNum = true;
+        }
+      }
+    </script>
+</head>
+<body>
+<div align="center">
+  <div class = "calcul">
+    <div class = "display"><input type="text" size="35" id="display" readonly></div>
+    <div class = "key">
+      <p>
+        <input type="button" class="button" value = "C"  onclick = 'clearNumDisplay("")'>
+        <input type="button" class="button" value = "%"  onclick = 'operNum("%")'>
+        <input type="button" class="button" value = "/"  onclick = 'operNum("/")'>
+        <input type="button" class="button" value = "="  onclick = 'operNum("=")'>
+      </p>
+      <p>
+        <input type="button" class="button" value = "7"  onclick = 'addNumDisplay("7")'>
+        <input type="button" class="button" value = "8"  onclick = 'addNumDisplay("8")'>
+        <input type="button" class="button" value = "9"  onclick = 'addNumDisplay("9")'>
+        <input type="button" class="button" value = "*"  onclick = 'operNum("*")'>
+      </p>
+      <p>
+        <input type="button" class="button" value = "4"  onclick = 'addNumDisplay("4")'>
+        <input type="button" class="button" value = "5"  onclick = 'addNumDisplay("5")'>
+        <input type="button" class="button" value = "6"  onclick = 'addNumDisplay("6")'>
+        <input type="button" class="button" value = "-"  onclick = 'operNum("-")'>
+      </p>
+      <p>
+        <input type="button" class="button" value = "1"  onclick = 'addNumDisplay("1")'>
+        <input type="button" class="button" value = "2"  onclick = 'addNumDisplay("2")'>
+        <input type="button" class="button" value = "3"  onclick = 'addNumDisplay("3")'>
+        <input type="button" class="button" value = "+"  onclick = 'operNum("+")'>
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
