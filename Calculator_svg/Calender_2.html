@@ -7,13 +7,14 @@
     <script src="Calender_2.js"></script> <!--css와 js파일 분리-->
 </head>
 <body>
-  <div class="calculBody" align="center" text-align:"center" >
-    <svg width="360" height="400">
-      <rect rx="20" ry="20" width="360" height="390" style="fill:#9C8DCA;
+  <div class="calculBody" align="center" text-align:center >
+    <svg width="360" height="500" text-align="center">
+      <rect rx="20" ry="20" width="360" height="470" style="fill:#9C8DCA;
       stroke:red;stroke-width:5;opacity:0.5" />
-      <rect x="30" y="10" rx="20" ry="20" width="300" height="70" style="fill:#ccffff;" />
-      <text id="display" font-size="16" x="120" y="40"></text>
-
+      <g class="calculPanel" width="400" font-family="Comic Sans MS">
+        <rect x="30" y="10" rx="20" ry="20" width="300" height="70" style="fill:#ccffff;" />
+        <text id="display" font-size="16" x="60" y="50"></text>
+      </g>
       <g class="button">
         <rect x="40" y="100" rx="5" ry="5" width="50" height="50" onclick = 'clearNumDisplay("")'/>
         <text class="textButton" x="57" y="130" fill="black" stroke-width="0" onclick = 'clearNumDisplay("")'>C</text>
@@ -21,8 +22,8 @@
         <text class="textButton" x="132" y="130" fill="black" stroke-width="0" onclick = 'operNum("%")'>%</text>
         <rect x="190" y="100" rx="5" ry="5" width="50" height="50" onclick = 'operNum("/")'/>
         <text class="textButton" x="212" y="130" fill="black" stroke-width="0" onclick = 'operNum("/")'>/</text>
-        <rect x="265" y="100" rx="5" ry="5" width="50" height="50" onclick = 'operNum("=")'/>
-        <text class="textButton" x="282" y="130" fill="black" stroke-width="0" onclick = 'operNum("=")'>=</text>
+        <rect x="265" y="100" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay(".")'/>
+        <text class="textButton" x="287" y="130" fill="black" stroke-width="0" onclick = 'addNumDisplay(".")'>.</text>
         <rect x="40" y="170" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("7")'/>
         <text class="textButton" x="59" y="202" fill="black" stroke-width="0" onclick = 'addNumDisplay("7")'>7</text>
         <rect x="115" y="170" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("8")'/>
@@ -47,42 +48,58 @@
         <text class="textButton" x="210" y="340" fill="black" stroke-width="0" onclick = 'addNumDisplay("3")'>3</text>
         <rect x="265" y="310" rx="5" ry="5" width="50" height="50" onclick = 'operNum("+")'/>
         <text class="textButton" x="284" y="340" fill="black" stroke-width="0" onclick = 'operNum("+")'>+</text>
+        <rect x="40" y="380" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("0")'/>
+        <text class="textButton" x="59" y="410" fill="black" stroke-width="0" onclick = 'addNumDisplay("0")'>0</text>
+        <rect x="115" y="380" rx="5" ry="5" width="200" height="50" onclick = 'operNum("=")'/>
+        <text class="textButton" x="210" y="410" fill="black" stroke-width="0" onclick = 'operNum("=")'>=</text>
       </g>
 
     </svg>
   </div>
-<!-- <div align="center">
-  <div class = "calcul">
-    <div class = "display">
-      <div id="display"></div>
-    </div>
-    <div class = "key">
-      <div>
-        <div class="button" onclick = 'clearNumDisplay("")'>C</div>
-        <div class="button" onclick = 'operNum("%")'>%</div>
-        <div class="button" onclick = 'operNum("/")'>/</div>
-        <div class="button" onclick = 'operNum("=")'>=</div>
-      </div>
-      <div>
-        <div class="button" onclick = 'addNumDisplay("7")'>7</div>
-        <div class="button" onclick = 'addNumDisplay("8")'>8</div>
-        <div class="button" onclick = 'addNumDisplay("9")'>9</div>
-        <div class="button" onclick = 'operNum("*")'>*</div>
-      </div>
-      <div>
-        <div class="button" onclick = 'addNumDisplay("4")'>4</div>
-        <div class="button" onclick = 'addNumDisplay("5")'>5</div>
-        <div class="button" onclick = 'addNumDisplay("6")'>6</div>
-        <div class="button" onclick = 'operNum("-")'>-</div>
-      </div>
-      <div>
-        <div class="button" onclick = 'addNumDisplay("1")'>1</div>
-        <div class="button" onclick = 'addNumDisplay("2")'>2</div>
-        <div class="button" onclick = 'addNumDisplay("3")'>3</div>
-        <div class="button" onclick = 'operNum("+")'>+</div>
-      </div>
-    </div>
+<!-- GRAPH -->
+  <br>
+  <div class="graph">
+    <svg width = "1000" height="430">
+      <path d="M300 30 L300 380 L1000 380" stroke="black" fill="none"/>
+      <g class="grid">
+        <line x1="416.6" x2="416.6" y1="30" y2="380"></line>
+        <line x1="533.2" x2="533.2" y1="30" y2="380"></line>
+        <line x1="650" x2="650" y1="30" y2="380"></line>
+        <line x1="766.6" x2="766.6" y1="30" y2="380"></line>
+        <line x1="883.3" x2="883.3" y1="30" y2="380"></line>
+      </g>
+      <g class="grid">
+        <line x1="300" x2="1000" y1="88.3" y2="88.3"></line>
+        <line x1="300" x2="1000" y1="146.6" y2="146.6"></line>
+        <line x1="300" x2="1000" y1="205" y2="205"></line>
+        <line x1="300" x2="1000" y1="263.3" y2="263.3"></line>
+        <line x1="300" x2="1000" y1="321.6" y2="321.6"></line>
+      </g>
+      <g class="xLabel">
+        <text x="403" y="410">First</text>
+        <text x="508" y="410">Second</text>
+        <text x="632" y="410">Third</text>
+        <text x="744" y="410">Fourth</text>
+        <text x="870" y="410">Fifth</text>
+      </g>
+      <g class="yLabel">
+        <text x="250" y="30">120</text>
+        <text x="250" y="88.3">100</text>
+        <text x="250" y="146.6">80</text>
+        <text x="250" y="205">60</text>
+        <text x="250" y="263.3">40</text>
+        <text x="250" y="321.6">20</text>
+        <text x="250" y="380">0</text>
+        <text x="180" y="40">Results</text>
+      </g>
+    <g>
+        <rect class="recBar" x="396.6" y="30" width="40" height="0"></rect>
+        <rect class="recBar" x="513.2" y="30" width="40" height="0"></rect>
+        <rect class="recBar" x="630" y="30" width="40" height="0"></rect>
+        <rect class="recBar" x="736.6" y="30" width="40" height="0"></rect>
+        <rect class="recBar" x="853.3" y="30" width="40" height="0"></rect>
+      </g>
+    </svg>
   </div>
-</div> -->
 </body>
 </html>

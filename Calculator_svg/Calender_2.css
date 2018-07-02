@@ -18,5 +18,21 @@
   }
 
   #display{
+    text-align: center;
     fill:black;
   }
+
+
+/* graph */
+
+.grid {
+  stroke: black;
+  stroke-dasharray: 1 2;
+  stroke-width: 1;
+}
+
+.recBar{
+  fill: blue;
+  stroke: black;
+  opacity: 0.7;
+}
