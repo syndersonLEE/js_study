@@ -1,0 +1,22 @@
+  .key{
+    margin-top : 10px;
+  }
+
+  .textButton{
+    font-size:20;
+    font-family: "arial";
+  }
+
+  .button {
+    fill:white;
+    stroke: #00ff80;
+    stroke-width:5;
+  }
+
+  .button rect:hover{
+    fill:red;
+  }
+
+  #display{
+    fill:black;
+  }

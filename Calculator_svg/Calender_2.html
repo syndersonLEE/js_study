@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calender_2.css" type="text/css">
+    <script src="Calender_2.js"></script> <!--css와 js파일 분리-->
+</head>
+<body>
+  <div class="calculBody" align="center" text-align:"center" >
+    <svg width="360" height="400">
+      <rect rx="20" ry="20" width="360" height="390" style="fill:#9C8DCA;
+      stroke:red;stroke-width:5;opacity:0.5" />
+      <rect x="30" y="10" rx="20" ry="20" width="300" height="70" style="fill:#ccffff;" />
+      <text id="display" font-size="16" x="120" y="40"></text>
+
+      <g class="button">
+        <rect x="40" y="100" rx="5" ry="5" width="50" height="50" onclick = 'clearNumDisplay("")'/>
+        <text class="textButton" x="57" y="130" fill="black" stroke-width="0" onclick = 'clearNumDisplay("")'>C</text>
+        <rect x="115" y="100" rx="5" ry="5" width="50" height="50" onclick = 'operNum("%")'/>
+        <text class="textButton" x="132" y="130" fill="black" stroke-width="0" onclick = 'operNum("%")'>%</text>
+        <rect x="190" y="100" rx="5" ry="5" width="50" height="50" onclick = 'operNum("/")'/>
+        <text class="textButton" x="212" y="130" fill="black" stroke-width="0" onclick = 'operNum("/")'>/</text>
+        <rect x="265" y="100" rx="5" ry="5" width="50" height="50" onclick = 'operNum("=")'/>
+        <text class="textButton" x="282" y="130" fill="black" stroke-width="0" onclick = 'operNum("=")'>=</text>
+        <rect x="40" y="170" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("7")'/>
+        <text class="textButton" x="59" y="202" fill="black" stroke-width="0" onclick = 'addNumDisplay("7")'>7</text>
+        <rect x="115" y="170" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("8")'/>
+        <text class="textButton" x="134" y="202" fill="black" stroke-width="0" onclick = 'addNumDisplay("8")'>8</text>
+        <rect x="190" y="170" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("9")'/>
+        <text class="textButton" x="210" y="202" fill="black" stroke-width="0" onclick = 'addNumDisplay("9")'>9</text>
+        <rect x="265" y="170" rx="5" ry="5" width="50" height="50" onclick = 'operNum("*")'/>
+        <text class="textButton" x="286" y="205" fill="black" stroke-width="0" onclick = 'operNum("*")'>*</text>
+        <rect x="40" y="240" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("4")'/>
+        <text class="textButton" x="59" y="270" fill="black" stroke-width="0" onclick = 'addNumDisplay("4")'>4</text>
+        <rect x="115" y="240" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("5")'/>
+        <text class="textButton" x="134" y="270" fill="black" stroke-width="0" onclick = 'addNumDisplay("5")'>5</text>
+        <rect x="190" y="240" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("6")'/>
+        <text class="textButton" x="210" y="270" fill="black" stroke-width="0" onclick = 'addNumDisplay("6")'>6</text>
+        <rect x="265" y="240" rx="5" ry="5" width="50" height="50" onclick = 'operNum("-")'/>
+        <text class="textButton" x="286" y="270" fill="black" stroke-width="0" onclick = 'operNum("-")'>-</text>
+        <rect x="40" y="310" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("1")'/>
+        <text class="textButton" x="59" y="340" fill="black" stroke-width="0" onclick = 'addNumDisplay("1")'>1</text>
+        <rect x="115" y="310" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("2")'/>
+        <text class="textButton" x="134" y="340" fill="black" stroke-width="0" onclick = 'addNumDisplay("2")'>2</text>
+        <rect x="190" y="310" rx="5" ry="5" width="50" height="50" onclick = 'addNumDisplay("3")'/>
+        <text class="textButton" x="210" y="340" fill="black" stroke-width="0" onclick = 'addNumDisplay("3")'>3</text>
+        <rect x="265" y="310" rx="5" ry="5" width="50" height="50" onclick = 'operNum("+")'/>
+        <text class="textButton" x="284" y="340" fill="black" stroke-width="0" onclick = 'operNum("+")'>+</text>
+      </g>
+
+    </svg>
+  </div>
+<!-- <div align="center">
+  <div class = "calcul">
+    <div class = "display">
+      <div id="display"></div>
+    </div>
+    <div class = "key">
+      <div>
+        <div class="button" onclick = 'clearNumDisplay("")'>C</div>
+        <div class="button" onclick = 'operNum("%")'>%</div>
+        <div class="button" onclick = 'operNum("/")'>/</div>
+        <div class="button" onclick = 'operNum("=")'>=</div>
+      </div>
+      <div>
+        <div class="button" onclick = 'addNumDisplay("7")'>7</div>
+        <div class="button" onclick = 'addNumDisplay("8")'>8</div>
+        <div class="button" onclick = 'addNumDisplay("9")'>9</div>
+        <div class="button" onclick = 'operNum("*")'>*</div>
+      </div>
+      <div>
+        <div class="button" onclick = 'addNumDisplay("4")'>4</div>
+        <div class="button" onclick = 'addNumDisplay("5")'>5</div>
+        <div class="button" onclick = 'addNumDisplay("6")'>6</div>
+        <div class="button" onclick = 'operNum("-")'>-</div>
+      </div>
+      <div>
+        <div class="button" onclick = 'addNumDisplay("1")'>1</div>
+        <div class="button" onclick = 'addNumDisplay("2")'>2</div>
+        <div class="button" onclick = 'addNumDisplay("3")'>3</div>
+        <div class="button" onclick = 'operNum("+")'>+</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+</body>
+</html>
