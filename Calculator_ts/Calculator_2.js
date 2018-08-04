@@ -3,7 +3,6 @@ var boolEval = true;
 var calculMethod = ""; //수식에 대한 모든 string****
 var queueData = []; //그래프 수식을 위한 Queue 변수
 var overQueue = false;
-var chartJs;
 //display는 model만을 담당
 document.addEventListener('DOMContentLoaded', function () {
     CreateSVG();

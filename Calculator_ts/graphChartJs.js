@@ -1,3 +1,4 @@
+var chartJs;
 function makeChartJs(){
       chartJs = new Chart(document.getElementById("barChart"), {
         type: 'bar',
