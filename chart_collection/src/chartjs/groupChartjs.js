@@ -1,37 +1,32 @@
 document.addEventListener('DOMContentLoaded', function(){
+  console.time("Chartjs Execution Time");
   new Chart(document.getElementById("chartJsLine"), {
     type: 'line',
     data: {
       labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
       datasets: [{
           data: [86,114,106,106,107,111,133,221,783,2478],
-          label: "Africa",
+          label: "First",
           borderColor: "#3e95cd",
           fill: false
         }, {
           data: [282,350,411,502,635,809,947,1402,3700,5267],
-          label: "Asia",
+          label: "Second",
           borderColor: "#8e5ea2",
           fill: false
         }, {
           data: [168,170,178,190,203,276,408,547,675,734],
-          label: "Europe",
+          label: "Third",
           borderColor: "#3cba9f",
           fill: false
         }, {
           data: [40,20,10,16,24,38,74,167,508,784],
-          label: "Latin America",
+          label: "Fourth",
           borderColor: "#e8c3b9",
           fill: false
         }
       ]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'World population per region (in millions)'
-      }
-    }
   });
 
   new Chart(document.getElementById("chartJsBar"), {
@@ -40,42 +35,34 @@ document.addEventListener('DOMContentLoaded', function(){
       labels: ["First", "Second", "Third", "Fourth", "Fifth"],
       datasets: [
         {
-          label: "Population (millions)",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
           data: [2478,5267,734,784,433]
         }
       ]
     },
     options: {
-      legend: { display: true }
+      legend: { display: false }
     }
   });
 
   new Chart(document.getElementById("chartJsPie"), {
     type: 'pie',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: ["First", "Second", "Third", "Fourth", "Fifth"],
       datasets: [{
-        label: "Population (millions)",
         backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
         data: [2478,5267,734,784,433]
       }]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
   });
 
   new Chart(document.getElementById("chartJsRader"), {
     type: 'radar',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: ["First", "Second", "Third", "Fourth", "Fifth"],
       datasets: [
         {
-          label: "1950",
+          label: "First",
           fill: true,
           backgroundColor: "rgba(179,181,198,0.2)",
           borderColor: "rgba(179,181,198,1)",
@@ -83,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function(){
           pointBackgroundColor: "rgba(179,181,198,1)",
           data: [8.77,55.61,21.69,6.62,6.82]
         }, {
-          label: "2050",
+          label: "Second",
           fill: true,
           backgroundColor: "rgba(255,99,132,0.2)",
           borderColor: "rgba(255,99,132,1)",
@@ -94,52 +81,34 @@ document.addEventListener('DOMContentLoaded', function(){
         }
       ]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Distribution in % of world population'
-      }
-    }
   });
 
   new Chart(document.getElementById("chartJsPolar"), {
     type: 'polarArea',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: ["First", "Second", "Third", "Fourth", "Fifth"],
       datasets: [
         {
-          label: "Population (millions)",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
+          data: [247,526,734,784,433]
         }
       ]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
   });
 
   new Chart(document.getElementById("chartJsDoughnut"), {
     type: 'doughnut',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: ["First", "Second", "Third", "Fourth", "Fifth"],
       datasets: [
         {
-          label: "Population (millions)",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
           data: [2478,5267,734,784,433]
         }
       ]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
   });
+  console.timeEnd("Chartjs Execution Time");
+
 
 });
