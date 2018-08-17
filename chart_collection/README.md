@@ -102,6 +102,7 @@ function tuiLineChart(){
   var chart = tui.chart.lineChart(lineContainer, lineData, lineOptions);
 }
 ```
+
 각 라이브러리는 Data와 함수 디자인을 분리하여 표현하였는데, 약간은 다르지만 chartjs와 billboard.js는 new chart와 bb.generate함수 안에서 모든 data와 style을 선언해주어, html의 id를 가져와 그 차트를 표현해 주지만, google Chart와 toast는 style과 data 및 theme에 대한 각각의 object를 개별적으로 값을 가진다음 그 값에 대해 마지막 함수를 통해 호출하여 주는 방식입니다. 이는 사소해 보이지만, interactive하게 주기적으로 차트를 업데이트하기에는 프로그래밍적으로 후자에 비해 전자는 어려울 것으로 생각합니다.
 
 
