@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       columns: [
         ["First", 30, 200, 100, 400, 150, 250],
-        ["Second", 50, 20, 10, 40, 15, 25],
+          ["Second", 50, 20, 10, 40, 15, 25],
         ["Third", 60, 10, 50, 70, 40, 20]
       ],
       type: "bar"

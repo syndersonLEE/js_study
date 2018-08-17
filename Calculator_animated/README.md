@@ -1,9 +1,9 @@
 ﻿Chart.js 또는 D3.js를 통해 그래프를 생성해 봅니다.
+Using Chart.js and D3.js to make a Graph
 ================
 
-D3.js이용해서 그래프를 생성해보려고 합니다.
-
 D3.js를 이용한 축 및 배경 그리기
+Draw Axis & Background using D3.js
 -----------
 ``` r        
 function drawD3Axis(){
@@ -17,6 +17,8 @@ function drawD3Axis(){
         .append("text")
 ```
 D3에서 svg를 선언하여 틀을 만들고 svg에서 진행했던 것 처럼 grid, axis별로 line과 path를 이용해 그려준다.
+Declare svg to make graph shape in D3.js.   
+Draw axis using line and path like doing at svg.
 
 bar을 변수에서 가져와 삽입
 -----------
@@ -44,6 +46,7 @@ function drawD3Bar(){
 function 선언 부분에서 데이터를 queuedata에서 가져온 변수로 넣습니다.
 이 때에 queueData의 최대 크기 계산에 따라 bar의 enter과 append여부가 달라짐으로
 if else문을 통해서 두 부분을 분리하였습니다.
+In function declare part, put the variables that takes from queuedata at  
 
 
 #### 실습간 두 과정의 차이점
